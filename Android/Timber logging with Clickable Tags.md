@@ -12,12 +12,12 @@ implementation 'com.jakewharton.timber:timber:4.7.1'
 
 -------
 
-After that, create a class `HyperlinkLoggingTree` and paste following code.
+After that, create a class `ClickableLoggingTree` and paste following code.
 
 ```kotlin
 import timber.log.Timber
 
-class HyperlinkLoggingTree: Timber.DebugTree() {
+class ClickableLoggingTree: Timber.DebugTree() {
 
     override fun createStackElementTag(element: StackTraceElement): String? {
         with(element) {
@@ -35,7 +35,7 @@ Here we are using File Name, Line Number and Method Name.
 After that, you need to plan this tree in the `Application` SubClass.
 
 ```kotlin
-Timber.plant(HyperlinkLoggingTree())
+Timber.plant(ClickableLoggingTree())
 ```
 
 You can also plant different trees for each build variants. For example, you can plant a tree for debug build and a separate tree for release build.
